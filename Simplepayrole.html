@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Payroll Calculator</title>
+  <style>
+    body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Optional background color */
+            
+    }
+
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #85c2ff; /* Change to dark blue color */
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        header {
+            background-color: #3498db; /* Change to blue color */
+            color: white;
+            padding: 10px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+    h1, label, input, button, #result {
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 5px;
+    }
+
+    button {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    #result {
+      font-weight: bold;
+    }
+  </style>
+    <header>
+        <div class="header-content">
+            <!-- You can add a logo or website title here -->
+            <h1>My Awesome Website</h1>
+            
+            <!-- Home button -->
+            <a href="index.html" class="home-button">Home</a>
+        </div>
+    </header>
+<body>
+
+  <h1>Simple Payroll Calculator</h1>
+
+  <label for="hoursWorked">Enter Hours Worked:</label>
+  <input type="number" id="hoursWorked" placeholder="Enter hours">
+
+  <label for="hourlyRate">Enter Hourly Rate:</label>
+  <input type="number" id="hourlyRate" placeholder="Enter rate">
+
+  <button onclick="calculatePay()">Calculate Pay</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calculatePay() {
+      var hoursWorked = parseFloat(document.getElementById("hoursWorked").value) || 0;
+      var hourlyRate = parseFloat(document.getElementById("hourlyRate").value) || 0;
+
+      var totalPay = hoursWorked * hourlyRate;
+
+      document.getElementById("result").innerHTML = "Total Pay: $" + totalPay.toFixed(2);
+    }
+  </script>
+    
+</body>
+</html>
+
