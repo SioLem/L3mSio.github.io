@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celsius to Fahrenheit Converter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Optional background color */
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #85c2ff; /* Change to dark blue color */
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        header {
+            background-color: #3498db; /* Change to blue color */
+            color: white;
+            padding: 10px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333; /* Adjust header color */
+        }
+
+        label {
+            display: block;
+            margin: 20px 0 10px;
+            color: #555; /* Adjust label color */
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555; /* Adjust result text color */
+        }
+    </style>
+ <header>
+        <div class="header-content">
+            <!-- You can add a logo or website title here -->
+            <h1>My Awesome Website</h1>
+            
+            <!-- Home button -->
+            <a href="index.html" class="home-button">Home</a>
+        </div>
+    </header>
+<body>
+   <h1>Add two numbers</h1>
+
+<p>
+<label for="n1">First Number</label> 
+<input id="n1" name="n1" type="number" onkeyup="computesum()">
+<label for="n2">Second Number</label> 
+<input id="n2" name="n2" type="number" onkeyup="computesum()">
+
+</p>
+   
+<label for="sum" id="sumlabel">The sum is:</label>  
+<input id="sum" name="sum" type="number" readonly></input></p>
+
+<script>
+function computesum()
+{
+  var x,y;
+
+  // Retrieve the user input 
+  x = document.getElementById("n1").value*1;  // *1 Converts the result to number
+  y = document.getElementById("n2").value*1;  // to avoid having to use parseFloat
+
+  console.log(x);
+  console.log(y);
+
+  // Compute the sum
+  let z  = x+y;
+
+  // Display the result
+
+    document.getElementById("sumlabel").innerHTML='The sum of '
+       +x+' and '+y+' is:';
+    document.getElementById("sum").value=z;
+}
+    </script>
+</body>
+</html>
